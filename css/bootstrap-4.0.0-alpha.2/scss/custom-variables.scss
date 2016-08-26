@@ -1,0 +1,41 @@
+// Custom variables
+$enable-flex: true !default;
+$body-bg: #fff !default;
+$grid-gutter-width: 0;
+$modal-content-bg: #eee !default;
+$modal-header-border-color: rgba(0,0,0,.2) !default;
+$modal-title-padding: 0 !default;
+$modal-backdrop-opacity: .6 !default;
+$modal-lg: 1060px !default;
+
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm-a: 350px,
+  sm-b: 410px,
+  sm-c: 490px,
+  sm: 560px,
+  md-a: 610px,
+  md-b: 650px,
+  md-c: 700px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 576px,
+  md: 720px,
+  lg: 940px,
+  xl: 1140px
+) !default;
+

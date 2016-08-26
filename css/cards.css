@@ -1,0 +1,97 @@
+.flip {
+    -webkit-perspective: 800px;
+    -ms-perspective: 800px;
+    perspective: 800px;
+    text-align: center;
+    position: relative;
+
+    flex: 1 0 0;
+    margin-right: .625rem;
+    margin-left: .625rem;
+}
+.flip .card.flipped {
+    -webkit-transform: rotatey(180deg);
+    -ms-transform: rotatey(180deg);
+    transform: rotatey(180deg);
+}
+.flip .card {
+    /* BEGIN IE Problem */
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    /* END IE Problem */
+    line-height: normal;
+    margin-bottom: 0.25rem;
+}
+.flip .card {
+    background: rgba(255,255,255, .6);
+    cursor: pointer;
+}
+.flip .card .list-group-item {
+    background: transparent;
+}
+.flip .card .face {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip .card .front {
+    -webkit-transform: rotateX(0deg); 
+    transform: rotateX(0deg); /* hAcK: fixes Mozilla's backgace-visibility bug */
+}
+.flip .card .back {
+    -webkit-transform: rotatey(-180deg);
+    -ms-transform: rotatey(-180deg);
+    transform: rotatey(-180deg);
+    color: rgb(255,255,255);
+    color: rgba(255,255,255, .8);
+    position: absolute; /* hAcK for height */
+    top: 0; /* hAcK for height */
+}
+
+.card.flipped {
+    background: rgba(34,34,34, .7);
+}
+.card img {
+    position: relative;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    visibility: visibile;
+    opacity: 1;
+}
+.card.flipped img,
+.card.flipped .card-footer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+.card .card-title {
+    -webkit-transition: 0s;
+    transition: 0s;
+    visibility: visibile;
+    opacity: 1;
+}
+.card.flipped .card-title {
+    visibility: hidden;
+    opacity: 0;
+}
+.card.flipped .back {
+    position: relative; /* hAcK for height */
+    -ms-backface-visibility: visible; /* IE11 preserve-3d hAcK */
+}
+.card.flipped .front {
+    position: absolute; /* hAcK for height */
+}
+
+/* Extra styles for positioning 
+.flip .card.flipped .front {
+    height: 0;
+}
+.flip .card.flipped .back {
+    height: auto;
+}
+.flip .card .back {
+    height: 0;
+}*/

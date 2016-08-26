@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cloud Data Physicality Drill Down - COAR @ ANL</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+
+        <link rel="stylesheet" href="Font-Awesome/css/font-awesome.min.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Homenaje%7COswald:700" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap-4.0.0-alpha.2/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/cards.css"/>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.css"/>
+
+        <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@graph": 
+              [ 
+                {
+                  "@type": "Organization",
+                  "name": "Cyber Operations, Analysis, and Research",
+                  "alternateName": "COAR",
+                  "url": "https://coar.risc.anl.gov/",
+                  "logo": "http://www.anl.gov/sites/all/themes/anl/img/anl_logo_new.min.png",
+                  "memberOf": 
+                    {
+                      "@type": "Organization",
+                      "name": "Argonne National Laboratory",
+                      "url": "http://www.anl.gov/"
+                    }
+                },
+                { 
+                  "@type": "WebSite",
+                  "name": "Cloud Data Physicality Drill Down",
+                  "alternateName": "Cloud Data Physicality",
+                  "url": "https://coar.risc.anl.gov/cloud/"
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [{
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                      "@id": "http://www.anl.gov/",
+                      "name": "Argonne National Laboratory"
+                    }
+                  },{
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                      "@id": "http://www.gss.anl.gov/",
+                      "name": "Global Security Sciences",
+                      "alternateName": "GSS"
+
+                    }
+                  },{
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                      "@id": "http://www.gss.anl.gov/center-for-risk-and-infrastructure-sciences-overview/",
+                      "name": "Risk and Infrastructure Science Center",
+                      "alternateName": "RISC"
+                    }
+                  },{
+                    "@type": "ListItem",
+                    "position": 4,
+                    "item": {
+                      "@id": "https://coar.risc.anl.gov/",
+                      "name": "Cyber Operations, Analysis, and Researc",
+                      "alternateName": "COAR"
+                    }
+                  },{
+                    "@type": "ListItem",
+                    "position": 5,
+                    "item": {
+                      "@id": "https://coar.risc.anl.gov/cloud",
+                      "name": "Cloud Data Physicality Drill Down",
+                      "alternateName": "Cloud Data Physicality"
+                    }
+                  }]
+                },
+                {
+                  "@type": "ImageObject",
+                  "author": "Cyber Operations, Analysis, and Research"",
+                  "contentUrl": "images/multi-tenancy-poster.svg",
+                  "datePublished": "2016-08-25",
+                  "description": "Multi-tenancy and vulnerabilities in a shared application with multiple databases.",
+                  "name": "Multi-tenancy"
+                }
+              ]
+            }
+        </script>
+    </head>
+    <body data-spy="scroll" data-target="#mob-nav">
+        <a id="top" class="anchor"></a>
+        <div id="breadcrumb-wrapper">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="http://www.anl.gov">Argonne National Laboratory</a></li>
+                <li class="breadcrumb-item"><a href="http://www.gss.anl.gov">Global Security Sciences</a></li>
+                <li class="breadcrumb-item"><a href="http://www.gss.anl.gov/center-for-risk-and-infrastructure-sciences-overview/">Risk and Infrastructure Science Center</a></li>
+                <li class="breadcrumb-item"><a href="https://coar.risc.anl.gov/">COAR</a></li>
+                <li class="breadcrumb-item active"><span>Cloud</span></li>
+            </ol>
+        </div>
+        <div id="top-wrapper">
+            <h1>Cloud Data Physicality <br/>Drill Down</h1>
+            <div id="cloud">
+                <p>As you descend through the layers of cloud technology, <br/>threats become more physical</p>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row cloud-customers">
+                <a id="cloud-customers" class="anchor"></a>
+                <div class="bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div id="baby-cloud-wrapper">
+                                    <span class="baby-cloud-txt"> <span id="target"></span></span>
+                                    <span id="baby-cloud" class="hidden-md-down"><i class="fa fa-cloud" aria-hidden="true"></i></span>
+                                </div><!--/#baby-cloud-wrapper-->
+                                <nav id="jump">
+                                    <button data-target=".nav" data-toggle="collapse" type="button"> <i class="fa fa-bars" aria-hidden="true"></i></button>
+                                    <ul id="mob-nav" class="nav collapse">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#cloud-customers" data-loc="0">Cloud customers</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#cloud-service-providers" data-loc="1">Cloud service providers</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#administrative-provisioner" data-loc="2">Administrative provisioner</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#data-center-facility-owner" data-loc="3">Data center facility owner</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#top">Back to Top</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <h2 data-toggle="tooltip" title="End users with legitimate access to a cloud service">Cloud Customers</h2>
+                            </div><!--/.col-*-->
+                        </div><!--/.row-->
+                        <div class="card-deck">
+                            <div class="col-md-4 col-md-offset-2">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/384080245_9489a17c36_z.jpg" alt="Guy sitting in front of four monitors"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">End users are an easy attack vector into public and private clouds</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Make poor password choices</li>
+                                                <li class="list-group-item">Click unsolicited links in email</li>
+                                                <li class="list-group-item">Use untrusted computers to access secure networks</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                    <small>
+                                        Photo by <a href="https://www.flickr.com/photos/jesuspresley/">
+                                        <em>Martin Terber</em></a>. <a href="https://creativecommons.org/licenses/by-nd/2.0/">License</a>
+                                    </small>
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/6816581220_dc7612d8dd_z.jpg" alt="Person using a tablet"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Cloud connected tablets and mobile devices create a simplified attack surface</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Sensitive email may be sent through and stored on shared use cloud systems and phones or tablets</li>
+                                                <li class="list-group-item">Apps for tablets and smartphones to connect to industrial control systems (ICS) for monitoring or control</li>
+                                                <li class="list-group-item">Mobile devices and tablets are not designed for security and lack adequate safeguards</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                    <small>
+                                        Photo by <a href="https://www.flickr.com/photos/ebayink/">
+                                        <em>ebayink</em></a>. <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">License</a>
+                                    </small>
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                        </div><!--/.card-deck-->
+                    </div><!--./container-->
+                </div><!--/.bg-->
+            </div><!--/.row-->
+            <div class="row cloud-service-providers">
+                <a id="cloud-service-providers" class="anchor"></a>
+                <div class="bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h2 data-toggle="tooltip" title="Companies that sell or provide cloud services to end users, either ad supported or under contract">Cloud Service Providers</h2>
+                            </div>
+                        </div><!--/.row-->
+                        <div class="card-deck">
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/cloud-services.png" alt="Cloud service providers"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Third Party Cloud services often rent underlying services from providers</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Cloud service providers often rent from IaaS providers such as Microsoft or Amazon</li>
+                                                <li class="list-group-item">Cloud service customers could use their access to launch attacks against other customers</li>
+                                                <li class="list-group-item">Cloud service providers offer their services to multiple clients, which could have unforeseen vulnerabilities and consequences</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/22006171.jpg" alt="Login screen"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Login portals and control panels are shared points of attack</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Shared login portals are an attractive attack vector</li>
+                                                <li class="list-group-item">Control panels and management portals may lack proper privilege separation</li>
+                                                <li class="list-group-item">Portals are often public and often use publicly available usernames</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/197803430.jpg" alt="Conceptual rendering of databases"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Private databases often run on shared hardware</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Cloud service providers are attractive targets due to the volume of customer records</li>
+                                                <li class="list-group-item">Databases are difficult to protect and need multiple protection strategies for data at rest, data in process, and data in motion    </li>
+                                                <li class="list-group-item">Divergent protection strategies can ignore or hamper each other</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                        </div><!--/.card-deck-->
+                        <div class="card-deck">
+                           <div class="col-md-4 col-md-offset-4">
+                               <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/multi-tenancy.png" alt="Multi-tenancy"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Multi-tenancy complicates defense strategies</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Multiple customers share physical infrastructure within cloud environments</li>
+                                                <li class="list-group-item">Attackers can use placement techniques to try to opportunistically deploy on shared hardware with targets</li>
+                                                <li class="list-group-item">Exploitation can occur through shared servers, software, databases, network interfaces and switches</li>
+                                                <li class="list-group-item more" data-toggle="modal" data-target="#multi-ten-def"><small>More info</small></li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                        </div><!--/.card-deck-->
+                    </div><!--./container-->
+                </div><!--/.bg-->
+            </div><!--/.row-->
+
+            <div class="row administrative-provisioner">
+                <a id="administrative-provisioner" class="anchor"></a> 
+                <div class="bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h2 data-toggle="tooltip" title="Infrastructure as a Service (IaaS) providers typically manage administratively provisioning physical and virtual hosts to multiple customers and cloud resellers.  These providers typically deal in a wide variety of business models and may own their own facilities or rent from other providers">Administrative Provisioner</h2>
+                            </div>
+                        </div><!--/.row-->
+                        <div class="card-deck">
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/326419766.jpg" alt="Infrastructure service worker"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Infrastructure as a Service as an Attack Surface</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Attackers have a wide variety of entry points, both digitally and physically</li>
+                                                <li class="list-group-item">IaaS providers may be reliant on real estate companies to build, run and/or operate facilities</li>
+                                                <li class="list-group-item">Contractual agreements range from full control of a facility by one customer to renting portions of a shared facility, access control is often not fully under the IaaS provider's purview</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/04-ge-data-center.jpg" alt="People icons with arrows towards disks"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Multi Tenant Facilities Increase Shared Risk</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Individual IaaS provider may have a "cage" where networking equipment is located</li>
+                                                <li class="list-group-item">Cages are often access controlled by traditional key, key card, or biometrics</li>
+                                                <li class="list-group-item">Access control to facilities is typically managed by third party security vendors</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/277565891.jpg" alt="Infrastructure service worker"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Shared Responsibility without Equally Shared Consequences</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Though a provider may offer a contract with a service level agreement (SLA), downtime may have more dire consequences for customers than providers</li>
+                                                <li class="list-group-item">Threats to data confidentiality or integrity of critical infrastructure providers may have consequences that include loss of life and national economic impacts</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                        </div><!--/.card-deck-->
+
+                        <div class="card-deck">
+                            <div class="col-md-4 col-md-offset-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/640px-STS-125_Gonzalez-Torres.jpg" alt="Tomas Gonzalez-Torres, STS-125 Lead Spacewalk Officer"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Remote Management of Physical Servers Can Subvert Virtualized Security Controls</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Remote management consoles offer full access to individual machines with the ability to make signiﬁcant changes to physical conﬁgurations</li>
+                                                <li class="list-group-item">Improper network segmentation can allow access from unsecured networks</li>
+                                                <li class="list-group-item">Software vulnerabilities can allow access to users' resources</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                        </div><!--/.card-deck-->
+                    </div><!--./container-->
+                </div><!--/.bg-->
+            </div><!--/.row-->
+
+            <div class="row data-center-facility-owner">
+                <a id="data-center-facility-owner" class="anchor"></a>
+                <div class="bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h2 data-toggle="tooltip" title="Facility Owners or Real Estate Trusts may own and/or control the physical facilities in which cloud and IaaS providers run their equipment and services">Data Center Facility Owner</h2>
+                            </div>
+                        </div><!--/.row-->
+                        <div class="card-deck">
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/3944107069_2ee2f5bc07_o.jpg" alt="Data Center Employee"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Responsibility for Physical Access Control May be Spread Across Several Parties</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">The facility owner of a data center often controls physical access to facilities, equipment, and servers including: Customer access (Security), Facilities management (cooling, water, electric), Telecom installation (fiber)</li>
+                                                <li class="list-group-item">These services may be contracted to third parties</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                    <small>
+                                        Photo by <a href="https://www.flickr.com/photos/tuesdaydigital/">
+                                        <em>Tuesday Digital</em></a>. <a href="https://creativecommons.org/licenses/by-nc/2.0/">License</a>
+                                    </small>
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/385756081.jpg" alt="Sets of cooling towers in data center building"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Remote Access to Maintenance Systems may offer a side-channel Vulnerability</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Remote access to heating, ventilating and air conditioning systems is standard practice and can be an attack vector</li>
+                                                <li class="list-group-item">On-site HVAC equipment maintenance via third-party contractors is also a threat</li>
+                                                <li class="list-group-item">Remote access to power equipment is another plausible attack vector</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/6722296265_6c76121528_o.jpg" alt="Facebook engineer Joshua Crass holds up a server board"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Personnel vetting is often outside of the cloud providers control</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Security and other personnel are a serious potential attack vector</li>
+                                                <li class="list-group-item">Employees may have full access to the facilities</li>
+                                                <li class="list-group-item">Cloud service vendors are typically not involved in personnel vetting at the facility level</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                    <small>
+                                        Photo by <a href="https://www.flickr.com/photos/intelfreepress/">
+                                        <em>Intel Free Press</em></a>. <a href="https://creativecommons.org/licenses/by/2.0/">License</a>
+                                    </small>
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                        </div><!--/.card-deck-->
+
+                        <div class="card-deck">
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/157726640.jpg" alt="Fiber optic cable being put into the ground"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Cable Entry Points and Switching Rooms are Often Critical  Points of Failure</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Cable entry points or shared fiber vaults are be attractive targets for data siphoning or vandalism</li>
+                                                <li class="list-group-item">Damage to data center switching rooms could cause extended facility outages</li>
+                                                <li class="list-group-item">Meet me rooms or shared spaces may allow indirect access to other customers equipment</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/294087923.jpg" alt="Room with empty chairs and monitors"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Security and network monitoring</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Security feed, CCTV, and network monitoring are remotely accessible - a signiﬁcant compromise danger</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                            <div class="col-md-4">
+                                <div class="flip">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="images/8523276256_b32bcc2df2_z.jpg" alt="Part of the new Dutch petascale national supercomputer, Cartesius"/>
+                                        <div class="face front card-block">
+                                            <h3 class="card-title">Fiber conduits</h3>
+                                        </div>
+                                        <div class="face back card-block">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Fiber entry conduits and network connection rooms are the nerve center of cloud data centers, representing a vulnerability</li>
+                                            </ul>
+                                        </div>
+                                    </div><!--/.card-->
+                                    <small>
+                                        Photo by <a href="https://www.flickr.com/photos/dvanzuijlekom/">
+                                        <em>Dennis van Zuijlekom</em></a>. <a href="https://creativecommons.org/licenses/by-sa/2.0/">License</a>
+                                    </small>
+                                </div><!--/.flip-->
+                            </div><!--/.col-*-->
+                        </div><!--/.card-deck-->
+                    </div><!--./container-->
+                </div><!--/.bg-->
+            </div><!--/.row-->
+        </div><!--/.container-fluid-->
+        
+        <!-- Modals -->
+        <div class="modal fade" id="multi-ten-def" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="images/multi-tenancy-poster.svg" class="img-fluid" alt="multi tenancy diagram" />
+                    </div>
+                </div>
+            </div>
+        </div><!--/#multi-ten-def-->
+
+        <!--/Modals--> 
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#cloud-customers"><span>Cloud customers</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#cloud-service-providers"><span>Cloud service providers</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#administrative-provisioner"><span>Administrative provisioner</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#data-center-facility-owner"><span>Data center facility owner</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#top"><span>Back to Top</span></a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://www.anl.gov"><span>Argonne National Laboratory</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://www.gss.anl.gov"><span>Global Security Sciences</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://www.gss.anl.gov/center-for-risk-and-infrastructure-sciences-overview/"><span>Risk and Infrastructure Science Center</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://coar.risc.anl.gov/"><span>COAR</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-xs-2">
+                    </div>
+                    <div class="col-lg-4 col-xs-8">
+                        <a href="http://www.anl.gov"><img src="images/logo.png" class="img-fluid" alt="argonne national laboratory"/></a>
+                    </div>
+                    <div class="col-lg-4 col-xs-2">
+                    </div>
+                </div>
+                <div class="row copyright">
+                    <div class="col-xs-12">
+                        Copyright &copy; 2016 <a title="Cyber Operations, Analysis, and Research" href="https://coar.risc.anl.gov/">
+                        <span>Cyber Operations, Analysis, and Research</span></a>.
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Javascript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="js/tether.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+
+        <script src="js/jquery-match-height/jquery.matchHeight.js"></script>
+        <script src="js/df_smooth_scroll/smooth.pack.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.js"></script>
+
+        <script type="text/javascript">
+            // Scroll height
+            function minicloud() {
+                // Fade the cloud as we scroll down the page
+                var containeR = window; 
+                var containeD = document;
+                var scrollPercent = 100 * $(containeR).scrollTop() / ($(containeD).height() - $(containeR).height());
+                var alpha = 1 - (scrollPercent * .01);
+                $('#baby-cloud').css({'color': 'rgba(238, 238, 238,' + alpha + ')'});
+
+                // Change the treat model based on where we are in the page
+                var cloudTxt = '';
+                var target = $('#baby-cloud-wrapper');
+                var loc = 3;
+                var jump = $('.nav-link.active');
+                if (jump) {
+                    loc = $('.nav-link.active').data('loc');
+                }
+                if (scrollPercent > 6) {
+                    cloudTxt = '<span class="tmh">Threat Model</span><br/>';
+                    if (loc == 3) {
+                        cloudTxt += 'All Physical';
+                        target.attr('class', 'all-physical');
+                    }
+                    else if (loc == 2) {
+                        cloudTxt += 'More Physical';
+                        target.attr('class', 'more-physical');
+                    }
+                    else if (loc == 1) {
+                        cloudTxt += 'Less Virtual';
+                        target.attr('class', 'less-virtual');
+                    }
+                    else if (loc == 0){
+                        cloudTxt += 'Virtual';
+                        target.attr('class', 'virtual');
+                    }
+                    else {
+                        cloudTxt = '';                   
+                    }
+                    $('#target').html(cloudTxt);
+                }
+                else {
+                    $('#target').html('');
+                }
+            }
+            minicloud();
+
+            // Apply and remove classes for card flipping
+            $('.flip').click(function() {
+                $(this).find('.card').toggleClass('flipped');
+                window.dispatchEvent(new Event('resize')); // Partially fix the narrow card flipped resize bug
+            });
+
+
+            // Make cards of equal height
+            $(function() {
+                $('.card-deck').each(function(i, elem) {
+                    $(elem).find('.card, .back').matchHeight({byRow: false});
+                });
+            });
+
+
+            // Navigation
+            $('.nav a').click(function() {
+                $(this).parent().parent().find('.active').removeClass('active')
+                $(this).addClass('active')
+            });
+    
+
+            // Add the "name" attribute to anchors for smooth scroll
+            $('.anchor').each(function(){
+                var aid = $(this).attr('id');
+                $(this).attr('name', aid);
+            });
+
+            // Change the mini cloud on scroll
+            $(window).scroll(function() {
+                minicloud();
+            });
+
+            // Initialize all tooltips
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            }); 
+        </script>
+    </body>
+</html>
