@@ -365,7 +365,7 @@ footer {
 }
 @include media-breakpoint-up(sm) {
     $fontsize: 1;
-    $h1size: 4em * $fontsize;
+    $h1size: 3.9em * $fontsize;
     body {
         font-size: 1rem;
     }
@@ -380,13 +380,13 @@ footer {
         font-size: 1.75rem;
     }
     #cloud {
-        $cloudpacing: -4.5em; 
+        $cloudpacing: -4em; 
         background-position: center $cloudpacing;
         margin-bottom: $cloudpacing;
         min-height: $cloudheight + 8em;
         p {
             background: transparent;
-            font-size: $fontsize * 1.4em;
+            font-size: $fontsize * 1.3em;
         }
     }
     .cloud-customers {
@@ -446,13 +446,13 @@ footer {
 }
 @include media-breakpoint-up(md-c) {
     #cloud {
-        $cloudpacing: -7.5em; 
+        $cloudpacing: -6.5em; 
         background-position: center $cloudpacing;
         margin-bottom: $cloudpacing;
     }
 }
 @include media-breakpoint-up(md) {
-    $fontsize: 1.2;
+    $fontsize: 1.1;
     $h1size: 4em * $fontsize;
     h1 {
         font-size: $h1size;
@@ -461,12 +461,12 @@ footer {
         margin-bottom: 0;
     }
     #cloud {
-        $cloudpacing: -8em;      
+        $cloudpacing: -7em;      
         background-position: center $cloudpacing;
         margin-bottom: $cloudpacing;
         min-height: $cloudheight + 10em;
         p { 
-            font-size: $fontsize * 1.3em;
+            font-size: $fontsize * 1.2em;
         }
     }
 }
